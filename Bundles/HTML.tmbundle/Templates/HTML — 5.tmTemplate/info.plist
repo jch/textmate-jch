@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>export TM_YEAR=`date +%Y`
+export TM_DATE=`date +%Y-%m-%d`
+
+mkdir -p "$TM_NEW_FILE_DIRECTORY/stylesheets"
+mkdir -p "$TM_NEW_FILE_DIRECTORY/javascripts"
+
+TM_RESET="$TM_NEW_FILE_DIRECTORY/stylesheets/reset-min.css"
+TM_CSS="$TM_NEW_FILE_DIRECTORY/stylesheets/main.css"
+TM_JS="$TM_NEW_FILE_DIRECTORY/javascripts/jquery.js"
+
+if [[ ! (-f $TM_NEW_FILE) ]]; then
+   perl -pe 's/\$\{([^}]*)\}/$ENV{$1}/g' &lt;index.html &gt;"$TM_NEW_FILE"
+fi
+
+if [[ ! (-f $TM_RESET) ]]; then
+   perl -pe 's/\$\{([^}]*)\}/$ENV{$1}/g' &lt;reset-min.css &gt;"$TM_RESET"
+fi
+
+if [[ ! (-f $TM_CSS) ]]; then
+   perl -pe 's/\$\{([^}]*)\}/$ENV{$1}/g' &lt;main.css &gt;"$TM_CSS"
+fi
+
+if [[ ! (-f $TM_JS) ]]; then
+   perl -pe 's/\$\{([^}]*)\}/$ENV{$1}/g' &lt;jquery.js &gt;"$TM_JS"
+fi</string>
+	<key>extension</key>
+	<string>html</string>
+	<key>name</key>
+	<string>HTML — 5 Static Site</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>uuid</key>
+	<string>F7C2D822-9EDC-4C5D-AC21-912F9090F9C4</string>
+</dict>
+</plist>
