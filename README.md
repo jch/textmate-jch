@@ -11,3 +11,7 @@ Ruby.tmbundle
 Source.tmbundle
 
   * MIT License template - set environment variable AUTHOR_NAME
+
+HTML.tmbundle
+
+  * HTML 5 Static site - index, reset-min.css, jquery.js, main.css
