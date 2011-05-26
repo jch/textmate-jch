@@ -15,3 +15,5 @@ Source.tmbundle
 HTML.tmbundle
 
   * HTML 5 Static site - index, reset-min.css, jquery.js, main.css
+
+[CoffeeScript.tmbundle](https://github.com/jashkenas/coffee-script-tmbundle) - added as submodule
